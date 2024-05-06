@@ -1,0 +1,12 @@
+services:
+  ACME:
+    image: neilpang/acme.sh
+    container_name: acme.sh
+    restart: always
+    network_mode: "host"
+    environment:
+      - REGRU_API_Username='API Username'
+      - REGRU_API_Password='API Password'
+    volumes:
+      - ./out:/acme.sh
+    command: daemon

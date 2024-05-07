@@ -1,5 +1,5 @@
 # Nextcloud AIO
-https://github.com/nextcloud/all-in-one/tree/main
+https://hub.docker.com/r/nextcloud/all-in-one
 
 # Nextcloud volume
 ### Create custom volume for store in '/mnt/data/'

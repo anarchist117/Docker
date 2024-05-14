@@ -6,6 +6,7 @@ https://hub.docker.com/_/haproxy
 docker run -it --rm \
 --name haproxy-syntax-check \
 -v /home/pi/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro \
+-v /home/pi/haproxy/dhparam.pem:/etc/haproxy/dhparam.pem:ro \
 haproxy \
 haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg
 ```

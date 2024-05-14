@@ -3,10 +3,5 @@ https://hub.docker.com/_/haproxy
 
 ### Test the configuration file
 ```bash
-docker run -it --rm \
---name haproxy-syntax-check \
--v /home/pi/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro \
--v /home/pi/haproxy/dhparam.pem:/etc/haproxy/dhparam.pem:ro \
-haproxy \
-haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg
+docker exec -it <container_name_or_id> haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg
 ```

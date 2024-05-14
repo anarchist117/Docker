@@ -1,12 +1,7 @@
 # HAProxy
 https://hub.docker.com/_/haproxy
 
-
-### SSL Termination
-https://www.haproxy.com/blog/haproxy-ssl-termination
-
-### SSL Configuration Generator
-https://ssl-config.mozilla.org/#server=haproxy&config=intermediate
-
-### HAProxy config tutorials
-https://www.haproxy.com/documentation/haproxy-configuration-tutorials
+### Test the configuration file
+```bash
+docker run -it --rm --name haproxy-syntax-check my-haproxy haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg
+```

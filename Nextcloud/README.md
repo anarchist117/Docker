@@ -2,6 +2,17 @@
 https://hub.docker.com/r/nextcloud/all-in-one
 
 # Nextcloud volume
+### Create Folder
+```
+mkdir nextcloud_aio_apache           /mnt/data
+mkdir nextcloud_aio_database         /mnt/data
+mkdir nextcloud_aio_database_dump    /mnt/data
+mkdir nextcloud_aio_elasticsearch    /mnt/data
+mkdir nextcloud_aio_mastercontainer  /mnt/data
+mkdir nextcloud_aio_nextcloud        /mnt/data
+mkdir nextcloud_aio_nextcloud_data   /mnt/data
+mkdir nextcloud_aio_redis            /mnt/data
+```
 ### Create custom volume for store in '/mnt/data/'
 ```bash
 docker volume create --name nextcloud_aio_apache          --opt type=none --opt device=/mnt/data/nextcloud_aio_apache          --opt o=bind

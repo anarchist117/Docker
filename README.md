@@ -24,14 +24,14 @@ https://docs.docker.com/engine/install/
 2. Install the Docker packages.
 
    ```console
-   $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
    ```
    
 3. Verify that the Docker Engine installation is successful by running the
    `hello-world` image.
 
    ```console
-   $ sudo docker run hello-world
+   sudo docker run hello-world
    ```
 
    This command downloads a test image and runs it in a container. When the

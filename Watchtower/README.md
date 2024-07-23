@@ -1,1 +1,1 @@
-[https://containrrr.dev/watchtower/](https://github.com/containrrr/watchtower)
+https://github.com/containrrr/watchtower

@@ -1,0 +1,10 @@
+  smtp_to_telegram:
+    image: kostyaesmukov/smtp_to_telegram
+    container_name: smtp_to_telegram
+    environment:
+      - ST_TELEGRAM_BOT_TOKEN=BOT_TOKEN
+      - ST_TELEGRAM_CHAT_IDS=CHAT_ID
+      - ST_TELEGRAM_MESSAGE_TEMPLATE={from}\\n{body}
+    ports:
+      - 2525:2525
+    restart: unless-stopped

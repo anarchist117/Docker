@@ -1,0 +1,1 @@
+https://github.com/linuxserver/docker-speedtest-tracker?tab=readme-ov-file

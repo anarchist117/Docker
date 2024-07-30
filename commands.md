@@ -3,5 +3,5 @@ docker run --rm -it haproxy /bash
 ```
 
 ```
-docker logs watchtower
+docker logs ContainerName
 ```

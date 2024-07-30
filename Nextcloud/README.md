@@ -29,7 +29,8 @@ docker volume create --name nextcloud_aio_redis           --opt type=none --opt 
 docker volume ls
 docker volume inspect volume_name
 ```
-### AIO passphrase
+
+# AIO passphrase
 ```
 docker exec nextcloud-aio-mastercontainer grep password /mnt/docker-aio-config/data/configuration.json
 ```

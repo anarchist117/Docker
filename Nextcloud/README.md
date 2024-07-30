@@ -34,3 +34,8 @@ docker volume inspect volume_name
 ```
 docker exec nextcloud-aio-mastercontainer grep password /mnt/docker-aio-config/data/configuration.json
 ```
+
+# Change backup location
+```
+docker exec nextcloud-aio-mastercontainer rm /mnt/docker-aio-config/data/borg.config
+```

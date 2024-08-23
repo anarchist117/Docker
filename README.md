@@ -27,5 +27,6 @@ https://docs.docker.com/engine/install/
 
 3. Run Docker compose file
    ```
-   docker compose up -d -f Speedtest-tracker.yml
+   docker compose up -d
+   docker compsoe up -d -f Speedtest-tracker.yml
    ```

@@ -30,5 +30,5 @@ https://docs.docker.com/engine/install/
    docker compose up -d
 
    # Custom Compose configuration files
-   docker compsoe up -d -f Speedtest-tracker.yml
+   docker compsoe up -d -f Custom_Compose_File.yml
    ```

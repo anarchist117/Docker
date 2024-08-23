@@ -25,7 +25,7 @@ https://docs.docker.com/engine/install/
    apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 
-3. Run docker-compose file
+3. Run Docker compose file
    ```
    docker compose up -d -f Speedtest-tracker.yml
    ```

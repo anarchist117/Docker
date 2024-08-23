@@ -1,5 +1,5 @@
 # Install Docker Engine
-https://docs.docker.com/engine/install/ubuntu/
+https://docs.docker.com/engine/install/
 
 ### Install using the `apt` repository
 

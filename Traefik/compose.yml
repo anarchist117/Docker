@@ -56,4 +56,4 @@ services:
       - "traefik.http.routers.wg-easy.rule=Host(`wireguard.domain.com`)"
       - "traefik.http.routers.wg-easy.tls=true"
       - "traefik.http.routers.wg-easy.tls.certresolver=myresolver"
-      - 'traefik.http.services.wg-easy.loadbalancer.server.port=51821'
+      - "traefik.http.services.wg-easy.loadbalancer.server.port=51821"

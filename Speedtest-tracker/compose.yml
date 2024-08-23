@@ -2,6 +2,11 @@ services:
   speedtest-tracker:
     image: lscr.io/linuxserver/speedtest-tracker:latest
     container_name: speedtest-tracker
+    restart: unless-stopped
+    ports:
+      - 0.0.0.0:80:80
+    volumes:
+      - /path/to/speedtest-tracker/data:/config
     environment:
       - PUID=1000
       - PGID=1000
@@ -15,8 +20,3 @@ services:
       - PUBLIC_DASHBOARD=True
       - APP_URL=http://tracker.yourdomain.com
       - TELEGRAM_BOT_TOKEN=BOT_TOKEN
-    volumes:
-      - /path/to/speedtest-tracker/data:/config
-    ports:
-      - 0.0.0.0:80:80
-    restart: unless-stopped

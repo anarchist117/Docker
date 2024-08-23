@@ -1,5 +1,6 @@
-# WG-Easy and WireGuard
+# WG-Easy
 https://github.com/wg-easy/wg-easy
+# WireGuard
 https://github.com/linuxserver/docker-wireguard
 
 ### Generate a bcrypt password hash (replace each $ symbol with two $$ symbols)

@@ -39,7 +39,3 @@ docker exec nextcloud-aio-mastercontainer grep password /mnt/docker-aio-config/d
 ```
 docker exec nextcloud-aio-mastercontainer rm /mnt/docker-aio-config/data/borg.config
 ```
-
-
-# Documentation
-https://github.com/nextcloud/all-in-one#how-to-change-the-default-location-of-nextclouds-datadir

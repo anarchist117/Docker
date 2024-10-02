@@ -14,6 +14,7 @@ docker exec -it --rm <mycontainer> sh
 ### Compose
 ```
 docker compose up -d <service>
+docker compose down
 ```
 
 ### Log

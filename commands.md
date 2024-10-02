@@ -4,13 +4,9 @@
 docker build -t <mycontainer> .
 ```
 
-### Run
+### Run & Execute
 ```
-docker run -it --rm <mycontainer> /bash
-```
-
-### Execute
-```
+docker run  -it --rm <mycontainer> sh
 docker exec -it --rm <mycontainer> sh
 ```
 

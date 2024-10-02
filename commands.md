@@ -1,15 +1,26 @@
 # Docker
+### Build
 ```
-docker run --rm -it haproxy /bash
-```
-
-```
-docker logs ContainerName
+docker build -t <mycontainer> .
 ```
 
+### Run
+```
+docker run -it --rm <mycontainer> /bash
+```
+
+### Execute
+```
+docker exec -it --rm <mycontainer> sh
+```
+
+### Log
+```
+docker logs <mycontainer>
+```
 
 # Docker compose
 ```
 docker compose pull
-docker compose up -d --force-recreate
+docker compose up -d <service>
 ```

@@ -11,8 +11,8 @@ services:
     image: certbot/certbot
     container_name: certbot
     restart: always
-    volumes:
-      - ./ocserv/letsencrypt/:/etc/letsencrypt
     ports:
       - '80:80'
+    volumes:
+      - ./ocserv/letsencrypt/:/etc/letsencrypt
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"

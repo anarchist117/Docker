@@ -1,5 +1,5 @@
 ```
-certbot certonly --standalone -d test.domain.com
+certbot certonly --standalone -d test.domain.com -m admin@domain.com --agree-tos --dry-run
 ```
 
 # Documentation

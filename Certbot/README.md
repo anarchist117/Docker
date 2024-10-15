@@ -1,4 +1,4 @@
-# 1. Get certificate
+# 1. Get Certificate
 ```
 docker run -it --rm --name certbot \
            -p 80:80 \
@@ -6,7 +6,7 @@ docker run -it --rm --name certbot \
             certbot/certbot certonly --standalone -d test.domain.com -m admin@domain.com --agree-tos
 ```
 
-# 2 Run compose
+# 2. Run Compose
 ```
 docker compose up -d
 ```

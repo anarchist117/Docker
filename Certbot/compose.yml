@@ -1,0 +1,9 @@
+certbot:
+    image: certbot/certbot
+    container_name: certbot
+    command: renew
+    volumes:
+      - ./letsencrypt/:/etc/letsencrypt
+    ports:
+      - 0.0.0.0:80:80
+    restart: always

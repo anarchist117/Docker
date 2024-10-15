@@ -1,9 +1,9 @@
 certbot:
     image: certbot/certbot
     container_name: certbot
-    command: renew
+    restart: always
     volumes:
       - ./letsencrypt/:/etc/letsencrypt
     ports:
-      - 0.0.0.0:80:80
-    restart: always
+      - 80:80
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"

@@ -7,8 +7,8 @@ services:
       - '443:443'
       - '443:443/udp'
     volumes:
-      - ./letsencrypt/live/vpn.domain.com/fullchain.pem:/etc/ocserv/server-cert.pem:ro
-      - ./letsencrypt/live/vpn.domain.com/privkey.pem:/etc/ocserv/server-key.pem:ro
+      - ./ocserv/letsencrypt/live/vpn.domain.com/fullchain.pem:/etc/ocserv/server-cert.pem:ro
+      - ./ocserv/letsencrypt/live/vpn.domain.com/privkey.pem:/etc/ocserv/server-key.pem:ro
       - ./ocserv/ocserv.conf:/etc/ocserv/ocserv.conf:ro
 
   certbot:

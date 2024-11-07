@@ -3,7 +3,7 @@
 docker run -it --rm --name certbot \
            -p 80:80 \
            -v "./letsencrypt:/etc/letsencrypt" \
-            certbot/certbot certonly --standalone -d test.domain.com -m admin@domain.com --agree-tos
+            certbot/certbot certonly --standalone -d test.domain.com -m admin@domain.com --non-interactive --agree-tos
 ```
 
 # 2. Run Compose

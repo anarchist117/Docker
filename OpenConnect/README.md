@@ -23,4 +23,4 @@ https://docs.openconnect-vpn.net/recipes/ocserv-configuration-basic/
 
 https://www.linuxbabe.com/ubuntu/set-up-openvpn-with-stunnel-on-ubuntu-24-04-server
 
-https://www.linuxbabe.com/ubuntu/certificate-authentication-openconnect-vpn-server-ocserv
+https://www.linuxbabe.com/ubuntu/openconnect-vpn-server-ocserv-ubuntu-16-04-17-10-lets-encrypt

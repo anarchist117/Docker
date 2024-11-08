@@ -9,12 +9,12 @@ ocpasswd -c /etc/ocserv/passwd vpn1
 ```
 
 # Certificate
-### Create CA Certificate
+### CA
 ```
 certtool --generate-privkey --outfile ca.key
 certtool --generate-self-signed --load-privkey ca.key --template ca.tmpl --outfile ca.pem
 ```
-### Create VPN User Certificate
+### User
 ```
 certtool --generate-privkey --outfile client.key
 certtool --generate-certificate --load-privkey client.key --load-ca-certificate ca.pem --load-ca-privkey ca.key --template client.tmpl --outfile client.pem

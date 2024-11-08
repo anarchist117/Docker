@@ -1,6 +1,5 @@
-# 
+# VPN User
 ```
-# Create User
 ocpasswd -c /etc/ocserv/passwd vpn1
 
 -c Password file
@@ -8,10 +7,14 @@ ocpasswd -c /etc/ocserv/passwd vpn1
 -l Lock user
 -u Unlock user
 ```
+
+# Certificate
+### Create CA Certificate
 ```
 certtool --generate-privkey --outfile ca.key
 certtool --generate-self-signed --load-privkey ca.key --template ca.tmpl --outfile ca.pem
 ```
+### Create VPN User Certificate
 ```
 certtool --generate-privkey --outfile client.key
 certtool --generate-certificate --load-privkey client.key --load-ca-certificate ca.pem --load-ca-privkey ca.key --template client.tmpl --outfile client.pem

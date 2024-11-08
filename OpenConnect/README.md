@@ -1,6 +1,6 @@
 # 1. Deploy
 ```
-docker build -t ocserv
+docker build -t ocserv .
 docker compose up -d
 docker exec -it ocserv bash
 ```

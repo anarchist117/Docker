@@ -1,4 +1,12 @@
-# VPN User
+# 1. Deploy
+```
+docker build -t ocserv
+docker compose up -d
+docker exec -it ocserv bash
+```
+
+# 2. Create User and Certificate
+## VPN User
 ```
 ocpasswd -c /etc/ocserv/passwd vpn1
 
@@ -8,7 +16,7 @@ ocpasswd -c /etc/ocserv/passwd vpn1
 -u Unlock user
 ```
 
-# Certificate
+## Certificate
 ### CA
 ```
 certtool --generate-privkey --outfile ca.key

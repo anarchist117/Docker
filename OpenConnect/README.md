@@ -3,8 +3,10 @@
 # Create User
 ocpasswd -c /etc/ocserv/passwd vpn1
 
-# Delete user
-ocpasswd -c /etc/ocserv/passwd -d vpn1
+-c Password file
+-d Delete user
+-l Lock user
+-u Unlock user
 ```
 ```
 certtool --generate-privkey --outfile ca.key

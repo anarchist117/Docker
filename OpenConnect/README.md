@@ -34,10 +34,6 @@ Windows [OpenConnect VPN](https://gui.openconnect-vpn.net/download)
 
 iOS [Cisco Secure Client](https://apps.apple.com/us/app/cisco-secure-client/id1135064690)
 
-# Download
-https://www.infradead.org/openconnect/download/
-
-https://www.infradead.org/ocserv/download/
 
 # Documentation
 [Ocserv Configuration - Basic](https://docs.openconnect-vpn.net/recipes/ocserv-configuration-basic/) 

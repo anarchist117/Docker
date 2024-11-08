@@ -1,5 +1,9 @@
 # 
 ```
+# Create User
+ocpasswd -c /etc/ocserv/passwd vpn1
+```
+```
 certtool --generate-privkey --outfile ca.key
 certtool --generate-self-signed --load-privkey ca.key --template ca.tmpl --outfile ca.pem
 ```

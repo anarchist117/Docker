@@ -21,6 +21,6 @@ https://www.infradead.org/ocserv/download/
 # Documentation
 https://docs.openconnect-vpn.net/recipes/ocserv-configuration-basic/
 
-https://www.linuxbabe.com/ubuntu/set-up-openvpn-with-stunnel-on-ubuntu-24-04-server
+[How to Set Up OpenVPN with Stunnel on Ubuntu 24.04 Server](https://www.linuxbabe.com/ubuntu/set-up-openvpn-with-stunnel-on-ubuntu-24-04-server)
 
-https://www.linuxbabe.com/ubuntu/openconnect-vpn-server-ocserv-ubuntu-16-04-17-10-lets-encrypt
+[Set Up OpenConnect VPN Server (ocserv) on Ubuntu 22.04 with Let’s Encrypt](https://www.linuxbabe.com/ubuntu/openconnect-vpn-server-ocserv-ubuntu-16-04-17-10-lets-encrypt)

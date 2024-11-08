@@ -19,7 +19,7 @@ https://www.infradead.org/openconnect/download/
 https://www.infradead.org/ocserv/download/
 
 # Documentation
-https://docs.openconnect-vpn.net/recipes/ocserv-configuration-basic/
+[Ocserv Configuration - Basic](https://docs.openconnect-vpn.net/recipes/ocserv-configuration-basic/) 
 
 [How to Set Up OpenVPN with Stunnel on Ubuntu 24.04 Server](https://www.linuxbabe.com/ubuntu/set-up-openvpn-with-stunnel-on-ubuntu-24-04-server)
 

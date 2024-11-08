@@ -8,12 +8,7 @@ docker exec -it ocserv bash
 # 2. Create User and Certificate
 ## VPN User
 ```
-ocpasswd -c /etc/ocserv/passwd vpn1
-
--c Password file
--d Delete user
--l Lock user
--u Unlock user
+ocpasswd -c /etc/ocserv/passwd client
 ```
 
 ## Certificate

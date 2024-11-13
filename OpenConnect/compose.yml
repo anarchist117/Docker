@@ -6,7 +6,7 @@ services:
     ports:
       - '443:443'
     volumes:
-      - ./ocserv:/etc/ocserv:rw
+      - ./ocserv:/etc/ocserv
       - ./letsencrypt/live/${DOMAIN}/fullchain.pem:/etc/ocserv/le/server.pem:ro
       - ./letsencrypt/live/${DOMAIN}/privkey.pem:/etc/ocserv/le/server.key:ro
     sysctls:

@@ -33,6 +33,9 @@ docker volume ls
 docker volume inspect volume_name
 ```
 
+# Missing default phone region
+docker exec --user www-data nextcloud-aio-nextcloud php occ config:system:set default_phone_region --value="US"
+
 # AIO passphrase
 ```
 docker exec nextcloud-aio-mastercontainer grep password /mnt/docker-aio-config/data/configuration.json

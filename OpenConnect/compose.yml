@@ -1,7 +1,7 @@
 services:
   ocserv:
-    image: ocserv
-    container_name: ocserv
+    image: anarchist117/openconnect
+    container_name: openconnect
     restart: always
     ports:
       - '443:443'

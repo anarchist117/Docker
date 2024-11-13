@@ -27,7 +27,6 @@ services:
       - '80:80'
     volumes:
       - ./ocserv/letsencrypt/:/etc/letsencrypt
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     command: >
       /bin/sh -c "certbot certonly --standalone -d ${DOMAIN} -m ${EMAIL} --non-interactive --agree-tos && 
         while :; do

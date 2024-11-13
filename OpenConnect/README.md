@@ -1,6 +1,6 @@
 # 1. Deploy
 ```
-docker compose up -d
+docker compose up -d && docker compose logs -f
 ```
 
 # 2. Create User and Certificate

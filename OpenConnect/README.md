@@ -1,10 +1,13 @@
 # 1. Deploy
 ```
 docker compose up -d
-docker exec -it ocserv bash
 ```
 
 # 2. Create User and Certificate
+## Container console
+```
+docker exec -it ocserv bash
+```
 ## VPN User
 ```
 ocpasswd -c /etc/ocserv/passwd client

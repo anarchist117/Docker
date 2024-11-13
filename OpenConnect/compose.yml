@@ -34,6 +34,3 @@ services:
           certbot renew
           sleep 12h
         done"
-    environment:
-      - DOMAIN=vpn.domain.com
-      - EMAIL=admin@domain.com

@@ -14,7 +14,7 @@ services:
           certbot renew
           sleep 12h
         done"
-        
+
   ocserv:
     image: anarchist117/openconnect
     container_name: openconnect

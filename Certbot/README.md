@@ -1,7 +1,6 @@
 # 1. Edit compose.yml
-```
 entrypoint: certbot/certbot certonly --standalone -d **test.domain.com** -m **admin@domain.com** --non-interactive --agree-tos
-```
+
 
 # 2. Run Compose
 ```

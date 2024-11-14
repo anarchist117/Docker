@@ -1,4 +1,20 @@
 services:
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    restart: always
+    ports:
+      - '80:80'
+    volumes:
+      - ./ocserv/letsencrypt/:/etc/letsencrypt
+    command: >
+      /bin/sh -c "certbot certonly --standalone -d ${DOMAIN} -m ${EMAIL} --non-interactive --agree-tos && 
+        while :; do
+          certbot renew
+          sleep 12h
+        done"
+        
   ocserv:
     image: anarchist117/openconnect
     container_name: openconnect
@@ -18,18 +34,3 @@ services:
       sh -c "iptables -t nat -A POSTROUTING -j MASQUERADE &&
       iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu &&
       exec ocserv -d 3 -c /etc/ocserv/ocserv.conf -f"
-      
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
-    restart: always
-    ports:
-      - '80:80'
-    volumes:
-      - ./ocserv/letsencrypt/:/etc/letsencrypt
-    command: >
-      /bin/sh -c "certbot certonly --standalone -d ${DOMAIN} -m ${EMAIL} --non-interactive --agree-tos && 
-        while :; do
-          certbot renew
-          sleep 12h
-        done"

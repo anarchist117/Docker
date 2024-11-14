@@ -1,9 +1,9 @@
 certbot:
-    image: certbot/certbot
+    image: anarchist117/certbot
     container_name: certbot
     restart: always
     ports:
       - 80:80
     volumes:
       - ./letsencrypt/:/etc/letsencrypt
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    entrypoint: certonly --standalone -d test.domain.com -m admin@domain.com --non-interactive --agree-tos

@@ -1,19 +1,14 @@
 services:
 
   certbot:
-    image: certbot/certbot
+    image: anarchist117/certbot
     container_name: certbot
     restart: always
     ports:
       - '80:80'
     volumes:
       - ./letsencrypt:/etc/letsencrypt
-    command: >
-      /bin/sh -c "certbot certonly --standalone -d ${DOMAIN} -m ${EMAIL} --non-interactive --agree-tos &&
-        while :; do
-          certbot renew
-          sleep 12h
-        done"
+    command: certonly --standalone -d ${DOMAIN} -m ${EMAIL} --non-interactive --agree-tos
 
   ocserv:
     image: anarchist117/ocserv

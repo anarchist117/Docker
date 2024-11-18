@@ -1,11 +1,12 @@
 FROM ubuntu
 
-RUN apt update && apt upgrade -y
-RUN apt install ocserv -y
-RUN apt install gnutls-bin -y
-RUN apt install iptables -y
-RUN apt install nano -y
-RUN apt install cron -y
+RUN apt update && apt upgrade -y && \
+    apt install -y \
+    ocserv \
+    gnutls-bin \
+    iptables \
+    nano \
+    cron
 
 COPY ocserv.conf /ocserv.conf
 COPY cron /etc/cron.d/cron

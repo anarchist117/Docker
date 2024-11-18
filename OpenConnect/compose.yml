@@ -10,8 +10,8 @@ services:
       - ./letsencrypt/:/etc/letsencrypt
     command: certonly --standalone -d ${DOMAIN} -m ${EMAIL} --non-interactive --agree-tos
     environment:
-      - DOMAIN=vpn.domain.com
-      - EMAIL=admin@domain.com
+      - DOMAIN="vpn.domain.com"
+      - EMAIL="admin@domain.com"
 
   ocserv:
     image: anarchist117/ocserv
@@ -29,5 +29,5 @@ services:
       - NET_ADMIN
     privileged: true
     environment:
-      - DOMAIN=vpn.domain.com
+      - DOMAIN="vpn.domain.com"
       - CA_Name="SSL VPN"      

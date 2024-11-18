@@ -9,10 +9,10 @@ if [ ! -f /etc/ocserv/ocserv.conf ]; then
 fi
 
 if [ ! -d /etc/ocserv/ssl/ ]; then
-  echo "Create ca.tmpl"
   mkdir /etc/ocserv/ssl/
   cd /etc/ocserv/ssl/
 
+  echo "Create ca.tmpl"
   cat > ca.tmpl <<EOF
 organization = $DOMAIN
 cn = $CA_Name

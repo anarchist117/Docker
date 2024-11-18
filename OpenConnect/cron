@@ -1,1 +1,1 @@
-* * * * * /users.sh >> /proc/1/fd/1 2>&1
+*/10 * * * * /users.sh >> /proc/1/fd/1 2>&1

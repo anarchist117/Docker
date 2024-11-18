@@ -7,8 +7,11 @@ services:
     ports:
       - '80:80'
     volumes:
-      - ./letsencrypt:/etc/letsencrypt
+      - ./letsencrypt/:/etc/letsencrypt
     command: certonly --standalone -d ${DOMAIN} -m ${EMAIL} --non-interactive --agree-tos
+    environment:
+      - DOMAIN=vpn.domain.com
+      - EMAIL=admin@domain.com
 
   ocserv:
     image: anarchist117/ocserv
@@ -17,7 +20,7 @@ services:
     ports:
       - '443:443'
     volumes:
-      - ./ocserv:/etc/ocserv
+      - ./ocserv:/etc/ocserv:rw
       - ./letsencrypt/live/${DOMAIN}/fullchain.pem:/etc/ocserv/le/server.pem:ro
       - ./letsencrypt/live/${DOMAIN}/privkey.pem:/etc/ocserv/le/server.key:ro
     sysctls:
@@ -25,7 +28,6 @@ services:
     cap_add:
       - NET_ADMIN
     privileged: true
-    command: >
-      sh -c "iptables -t nat -A POSTROUTING -j MASQUERADE &&
-      iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu &&
-      exec ocserv -d 3 -c /etc/ocserv/ocserv.conf -f"
+    environment:
+      - DOMAIN=vpn.domain.com
+      - CA_Name="SSL VPN"      

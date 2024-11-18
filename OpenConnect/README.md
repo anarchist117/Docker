@@ -21,9 +21,9 @@ certtool --generate-self-signed --load-privkey ca.key --template ca.tmpl --outfi
 ```
 ### Client
 ```
-certtool --generate-privkey --outfile client.key
-certtool --generate-certificate --load-privkey client.key --load-ca-certificate ca.pem --load-ca-privkey ca.key --template client.tmpl --outfile client.pem
-certtool --to-p12 --load-privkey client.key --load-certificate client.pem --pkcs-cipher aes-256 --outfile client.p12 --outder
+certtool --generate-privkey --outfile user.key
+certtool --generate-certificate --load-ca-certificate ca.pem --load-ca-privkey ca.key --template user.tmpl --load-privkey user.key --outfile user.pem
+certtool --to-p12 --load-certificate user.pem --load-privkey user.key --pkcs-cipher aes-256 --outfile user.p12 --outder
 ```
 
 # 3. Connect

@@ -8,14 +8,16 @@ RUN apt update && apt upgrade -y && \
     nano \
     cron
 
-COPY ocserv.conf /ocserv.conf
 COPY cron /etc/cron.d/cron
-COPY users.sh /users.sh
-COPY entrypoint.sh /entrypoint.sh
+COPY ocserv.conf \
+     users.sh \
+     entrypoint.sh \
+     /
 
 RUN crontab /etc/cron.d/cron
-RUN chmod +x /users.sh
-RUN chmod +x /entrypoint.sh
+RUN chmod +x \
+    /users.sh \
+    /entrypoint.sh
 
 EXPOSE 443/tcp
 

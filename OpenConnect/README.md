@@ -10,7 +10,7 @@ docker exec -it ocserv bash
 ```
 ## VPN User
 ```
-ocpasswd -c /etc/ocserv/passwd client
+ocpasswd -c /etc/ocserv/passwd user
 ```
 
 ## Certificate

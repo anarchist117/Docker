@@ -31,3 +31,4 @@ services:
     environment:
       - DOMAIN="vpn.domain.com"
       - CA_Name="SSL VPN"      
+      - Expiration="365"

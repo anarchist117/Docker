@@ -12,25 +12,36 @@ if [ ! -d /etc/ocserv/ssl/ ]; then
   mkdir /etc/ocserv/ssl/
   cd /etc/ocserv/ssl/
 
-  echo "Create ca.tmpl"
+  echo "Create ca.tmpl and user.tmpl"
   cat > ca.tmpl <<EOF
-organization = $DOMAIN
+organization = $Domain
 cn = $CA_Name
-
 serial = 001
 expiration_days = -1
 ca
-
 signing_key
 cert_signing_key
 crl_signing_key
 EOF
+  cat > user.tmpl <<EOF
+organization = $Domain
+cn =
+uid =
+expiration_days = $Expiration
+tls_www_client
+signing_key
+encryption_key
+EOF
 
   echo "Create ca.key"
-  certtool --generate-privkey --outfile ca.key
+  certtool --generate-privkey --outfile ca.key > /dev/null 2>&1
 
   echo "Create ca.pem"
-  certtool --generate-self-signed --load-privkey ca.key --template ca.tmpl --outfile ca.pem
+  certtool --generate-self-signed --load-privkey ca.key --template ca.tmpl --outfile ca.pem > /dev/null 2>&1
+  mkdir -p /etc/ocserv/users
+  cp /etc/ocserv/ssl/ca.pem /etc/ocserv/users/ca.cer
+
+  echo ""
 fi
 
 ocserv -c /etc/ocserv/ocserv.conf -f &

@@ -29,6 +29,6 @@ services:
       - NET_ADMIN
     privileged: true
     environment:
-      - DOMAIN="vpn.domain.com"
-      - CA_Name="SSL VPN"      
-      - Expiration="365"
+      - DOMAIN=vpn.domain.com  # CA Organization (VPN Domain)
+      - CA_Name="SSL VPN"      # CA Name (Root CA)
+      - Expiration=365         # User certificate expiration days

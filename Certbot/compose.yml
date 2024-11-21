@@ -7,7 +7,6 @@ services:
       - 80:80
     volumes:
       - ./letsencrypt/:/etc/letsencrypt
-    entrypoint: certonly --standalone -d test.domain.com -m admin@domain.com --non-interactive --agree-tos
     environment:
       - DOMAIN=vpn.domain.com
       - EMAIL=admin@vpn.domain.com

@@ -25,5 +25,5 @@ if [ -f /etc/ocserv/users.txt ]; then
     fi
   done < /etc/ocserv/users.txt
 else
-  echo "Not found ocserv/users.txt"
+  touch /etc/ocserv/users.txt
 fi

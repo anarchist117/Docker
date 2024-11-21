@@ -1,9 +1,9 @@
 FROM certbot/certbot
 
-COPY certbot-renew /etc/crontabs
-COPY entrypoint.sh /entrypoint.sh
+COPY cron /etc/crontabs
+COPY entrypoint.sh /
 
-RUN crontab /etc/crontabs/certbot-renew
-RUN chmod +x /entrypoint.sh
+RUN crontab /etc/crontabs/cron && \
+    chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]

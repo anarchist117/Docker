@@ -14,8 +14,8 @@ COPY users.sh \
      entrypoint.sh \
      /
 
-RUN chmod +x /users.sh /entrypoint.sh && \
-    crontab /etc/cron.d/cron
+RUN crontab /etc/cron.d/cron && \
+    chmod +x /users.sh /entrypoint.sh
 
 EXPOSE 443/tcp
 

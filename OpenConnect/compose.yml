@@ -9,8 +9,8 @@ services:
     volumes:
       - ./letsencrypt/:/etc/letsencrypt
     environment:
-      - DOMAIN="vpn.domain.com"
-      - EMAIL="admin@domain.com"
+      - DOMAIN=vpn.domain.com
+      - EMAIL=admin@domain.com
 
   ocserv:
     image: anarchist117/ocserv

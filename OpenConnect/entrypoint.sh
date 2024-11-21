@@ -95,6 +95,11 @@ EOF
   cp /etc/ocserv/ssl/ca.pem /etc/ocserv/users/ca.cer
 fi
 
+while [ ! -d /etc/ocserv/le/live/$Domain ]; do
+  echo "Waiting Let's Encrypt certificate"
+  sleep 5
+done
+
 echo ""
 
 ocserv -c /etc/ocserv/ocserv.conf -f &

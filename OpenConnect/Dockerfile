@@ -10,8 +10,7 @@ RUN apt update && apt upgrade -y && \
     apt clean && rm -rf /var/lib/apt/lists/*
 
 COPY cron /etc/cron.d/cron
-COPY ocserv.conf \
-     users.sh \
+COPY users.sh \
      entrypoint.sh \
      /
 

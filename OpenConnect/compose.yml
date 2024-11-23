@@ -1,5 +1,11 @@
-services:
+x-environment:
+  &env
+  - Domain=vpn.domain.com
+  - Email=admin@domain.com
+  - CA_Name="SSL VPN"
+  - Expiration=365
 
+services:
   certbot:
     image: anarchist117/certbot
     container_name: certbot
@@ -8,9 +14,7 @@ services:
       - '80:80'
     volumes:
       - ./letsencrypt/:/etc/letsencrypt
-    environment:
-      - DOMAIN=vpn.domain.com
-      - EMAIL=admin@domain.com
+    environment: *env
 
   ocserv:
     image: anarchist117/ocserv
@@ -26,7 +30,4 @@ services:
     cap_add:
       - NET_ADMIN
     privileged: true
-    environment:
-      - Domain=vpn.domain.com  # CA Organization (VPN Domain)
-      - CA_Name="SSL VPN"      # CA Name (Root CA)
-      - Expiration=365         # User certificate expiration days
+    environment: *env

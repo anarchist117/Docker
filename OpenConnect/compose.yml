@@ -1,9 +1,9 @@
 x-environment:
   &env
-  - Domain=vpn.domain.com
-  - Email=admin@domain.com
-  - CA_Name="SSL VPN"
-  - Expiration=365
+  - Domain=vpn.domain.com    # CA Organization (VPN Domain)
+  - Email=admin@domain.com   # Email for Let's Encrypt
+  - CA_Name="SSL VPN"        # Root CA name
+  - Expiration=365           # User certificate expiration days
 
 services:
   certbot:

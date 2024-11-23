@@ -8,5 +8,5 @@ services:
     volumes:
       - ./letsencrypt/:/etc/letsencrypt
     environment:
-      - DOMAIN=vpn.domain.com
-      - EMAIL=admin@vpn.domain.com
+      - Domain=vpn.domain.com
+      - Email=admin@vpn.domain.com

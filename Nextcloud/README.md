@@ -4,6 +4,9 @@ https://hub.docker.com/r/nextcloud/all-in-one
 # Nextcloud AIO Interface
 https://nextcloud.domain.com:8080
 
+https://nextcloud.domain.com:8443 (if Port 80 TCP opened)
+
+
 # Nextcloud volume
 ### Create Folder
 ```

@@ -2,6 +2,7 @@ services:
   apache:
     image: httpd:latest
     container_name: apache
+    restart: always
     ports:
     - '80:80'
     volumes:

@@ -1,1 +1,1 @@
-https://hub.docker.com/r/networkboot/dhcpd
+https://github.com/networkboot/docker-dhcpd

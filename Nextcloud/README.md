@@ -51,3 +51,10 @@ docker exec nextcloud-aio-mastercontainer grep password /mnt/docker-aio-config/d
 ```
 docker exec nextcloud-aio-mastercontainer rm /mnt/docker-aio-config/data/borg.config
 ```
+
+
+# Reset 2FA
+Install [Two-Factor Admin Support](https://apps.nextcloud.com/apps/twofactor_admin)
+```
+docker exec --user www-data nextcloud-aio-nextcloud php occ twofactorauth:admin:generate-code username
+```

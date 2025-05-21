@@ -10,3 +10,6 @@ docker run -d --name gitlab-runner --restart always \
   -v /var/run/docker.sock:/var/run/docker.sock \
   gitlab/gitlab-runner:latest
 ```
+
+# Documentation
+[Run GitLab Runner in a container](https://docs.gitlab.com/runner/install/docker/)

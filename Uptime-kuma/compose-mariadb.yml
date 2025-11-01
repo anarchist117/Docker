@@ -1,0 +1,47 @@
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:2
+    container_name: uptime-kuma
+    restart: always
+    ports:
+      - 3001:3001
+#    volumes:
+#      - ./uptime-kuma:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001"]
+      interval: 30s
+      retries: 3
+      start_period: 10s
+      timeout: 5s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    environment:
+      - TZ=Europe/Moscow
+      - UMASK=0022
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+  mariadb:
+    image: mariadb:lts
+    container_name: mariadb
+    restart: always
+    ports:
+      - "0.0.0.0:3306:3306"
+#    volumes: 
+#      - "./mysql/data:/var/lib/mysql/data"
+#      - "./mysql/logs:/var/lib/mysql/logs"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    environment:
+      - MARIADB_USER=kuma
+      - MARIADB_PASSWORD=kuma
+      - MARIADB_DATABASE=kuma
+      - MARIADB_ROOT_PASSWORD=password

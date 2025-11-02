@@ -1,3 +1,5 @@
+# https://develop.sentry.dev/self-hosted/experimental/reverse-proxy/#nginx
+
 upstream sentry {
   server 192.168.1.3:9000;
 }

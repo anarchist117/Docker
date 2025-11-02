@@ -1,3 +1,5 @@
+# https://www.keycloak.org/server/reverseproxy
+
 upstream keycloak {
   server 192.168.1.2:8080;
 }

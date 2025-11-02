@@ -1,12 +1,12 @@
 services:
   uptime-kuma:
     image: louislam/uptime-kuma:2
-    container_name: uptime-kuma
+    container_name: uptime
     restart: always
     ports:
-      - 3001:3001
-#    volumes:
-#      - ./uptime-kuma:/app/data
+      - 0.0.0.0:3001:3001
+    volumes:
+      - ./data:/app/data
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3001"]
       interval: 30s
@@ -21,19 +21,25 @@ services:
     environment:
       - TZ=Europe/Moscow
       - UMASK=0022
+      - UPTIME_KUMA_DB_TYPE=mariadb
+      - UPTIME_KUMA_DB_HOSTNAME=mariadb
+      - UPTIME_KUMA_DB_PORT=3306
+      - UPTIME_KUMA_DB_NAME=kuma
+      - UPTIME_KUMA_DB_USERNAME=kuma
+      - UPTIME_KUMA_DB_PASSWORD=kuma
     depends_on:
       mariadb:
         condition: service_healthy
 
   mariadb:
     image: mariadb:lts
-    container_name: mariadb
+    container_name: uptime-mariadb
     restart: always
     ports:
       - "0.0.0.0:3306:3306"
-#    volumes: 
-#      - "./mysql/data:/var/lib/mysql/data"
-#      - "./mysql/logs:/var/lib/mysql/logs"
+    volumes:
+      - "./mysql/data:/var/lib/mysql/data"
+      - "./mysql/logs:/var/lib/mysql/logs"
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       start_period: 10s

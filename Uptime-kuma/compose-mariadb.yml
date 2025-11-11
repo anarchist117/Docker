@@ -35,11 +35,10 @@ services:
     image: mariadb:lts
     container_name: uptime-mariadb
     restart: always
-    ports:
-      - "0.0.0.0:3306:3306"
+    expose:
+      - "3306"
     volumes:
-      - "./mysql/data:/var/lib/mysql/data"
-      - "./mysql/logs:/var/lib/mysql/logs"
+      - "./mysql:/var/lib/mysql"
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       start_period: 10s

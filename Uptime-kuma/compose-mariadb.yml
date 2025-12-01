@@ -6,7 +6,7 @@ services:
     ports:
       - 0.0.0.0:3001:3001
     volumes:
-      - ./data:/app/data
+      - uptime-data:/app/data
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3001"]
       interval: 30s
@@ -38,7 +38,7 @@ services:
     expose:
       - "3306"
     volumes:
-      - "./mysql:/var/lib/mysql"
+      - "mariadb-data:/var/lib/mysql"
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       start_period: 10s
@@ -50,3 +50,9 @@ services:
       - MARIADB_PASSWORD=kuma
       - MARIADB_DATABASE=kuma
       - MARIADB_ROOT_PASSWORD=password
+
+volumes:
+  mariadb-data:
+    name: "mariadb-data"
+  uptime-data:
+    name: "uptime-data"

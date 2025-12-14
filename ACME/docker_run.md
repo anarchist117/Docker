@@ -1,6 +1,6 @@
 ```
 docker run --rm 
-  -v "/srv/nginx/certs":/acme.sh
+  -v ./out:/acme.sh
   --net=host
   -e REGRU_API_Username="$REGRU_API_Username" 
   -e REGRU_API_Password="$REGRU_API_Password"

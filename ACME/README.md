@@ -6,7 +6,7 @@ docker compose up -d
 ```
 ### 2. Get Certificate
 ```bash
-docker run -it acme.sh  --issue --dns dns_regru -d example.com -d *.example.com --server letsencrypt
+docker exec -it acme.sh  --issue --dns dns_regru -d example.com -d *.example.com --server letsencrypt
 ```
 
 

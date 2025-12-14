@@ -1,3 +1,4 @@
+```
 docker run --rm 
   -v "/srv/nginx/certs":/acme.sh
   --net=host
@@ -5,3 +6,4 @@ docker run --rm
   -e REGRU_API_Password="$REGRU_API_Password"
   neilpang/acme.sh 
   --issue --dns dns_regru -d domain.com -d *.domain.com --server letsencrypt
+```

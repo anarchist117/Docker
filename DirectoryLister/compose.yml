@@ -1,0 +1,9 @@
+services:
+  directory-lister:
+    image: directorylister/directorylister:latest
+    container_name: directorylister
+    restart: unless-stopped
+    ports:
+      - 0.0.0.0:80:80
+    volumes:
+      - ./data:/data

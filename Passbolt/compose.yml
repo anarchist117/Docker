@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: passbolt-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "passbolt"
+      POSTGRES_USER: "passbolt"
+      POSTGRES_PASSWORD: "P4ssb0lt"
+      PGDATA: /var/lib/postgresql/18/docker
+    volumes:
+      - database_volume:/var/lib/postgresql
+
+  passbolt:
+    image: passbolt/passbolt:latest
+    container_name: passbolt
+    restart: unless-stopped
+    tty: true
+    depends_on:
+      - db
+    environment:
+      APP_FULL_BASE_URL: https://passbolt.local
+      DATASOURCES_DEFAULT_DRIVER: Cake\Database\Driver\Postgres
+      DATASOURCES_DEFAULT_ENCODING: "utf8"
+      DATASOURCES_DEFAULT_URL: "postgres://passbolt:P4ssb0lt@db:5432/passbolt?schema=passbolt"
+      EMAIL_TRANSPORT_DEFAULT_HOST: "smtp.domain.tld"
+      EMAIL_TRANSPORT_DEFAULT_PORT: 587
+      PASSBOLT_SECURITY_PROXIES_ACTIVE: true
+      PASSBOLT_EMAIL_VALIDATE_MX: true
+    volumes:
+      - gpg_volume:/etc/passbolt/gpg
+      - jwt_volume:/etc/passbolt/jwt
+    command: >
+      bash -c "/usr/bin/wait-for.sh -t 0 db:5432 -- /docker-entrypoint.sh"
+    ports:
+      - 0.0.0.0:8080:80
+
+volumes:
+  database_volume:
+  gpg_volume:
+  jwt_volume:

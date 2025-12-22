@@ -25,15 +25,14 @@ services:
       DATASOURCES_DEFAULT_URL: "postgres://passbolt:P4ssb0lt@db:5432/passbolt?schema=passbolt"
       EMAIL_TRANSPORT_DEFAULT_HOST: "smtp.domain.tld"
       EMAIL_TRANSPORT_DEFAULT_PORT: 587
-      PASSBOLT_SECURITY_PROXIES_ACTIVE: true
-      PASSBOLT_EMAIL_VALIDATE_MX: true
     volumes:
       - gpg_volume:/etc/passbolt/gpg
       - jwt_volume:/etc/passbolt/jwt
     command: >
       bash -c "/usr/bin/wait-for.sh -t 0 db:5432 -- /docker-entrypoint.sh"
     ports:
-      - 0.0.0.0:8080:80
+      - 0.0.0.0:80:80
+      - 0.0.0.0:443:443
 
 volumes:
   database_volume:

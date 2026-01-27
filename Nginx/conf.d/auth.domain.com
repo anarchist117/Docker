@@ -7,7 +7,6 @@ upstream keycloak {
 server {
   listen 443 ssl;
   server_name           auth.domain.com;
-  include               conf.d/_global.conf;
 
   location / {
     proxy_pass          http://keycloak;

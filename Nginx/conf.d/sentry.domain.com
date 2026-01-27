@@ -7,7 +7,6 @@ upstream sentry {
 server {
   listen 443 ssl;
   server_name           sentry.domain.com;
-  include               conf.d/_global.conf;
 
   proxy_buffering       on;
   proxy_buffer_size     128k;

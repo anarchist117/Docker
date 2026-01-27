@@ -7,7 +7,6 @@ upstream uptime-kuma {
 server {
   listen 443 ssl;
   server_name           uptime.domain.com;
-  include               conf.d/_global.conf;
 
   location / {
     proxy_pass          http://uptime-kuma;

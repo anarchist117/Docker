@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:latest
-    container_name: passbolt-db
+    container_name: passbolt-postgres
     restart: unless-stopped
     environment:
       POSTGRES_DB: "passbolt"

@@ -6,9 +6,9 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      TZ: Etc/UTC
+      TZ: Europe/Moscow
       WATCHTOWER_NOTIFICATIONS: shoutrrr
-      WATCHTOWER_NOTIFICATIONS_HOSTNAME: server_name
+      WATCHTOWER_NOTIFICATIONS_HOSTNAME: Server_Name
       WATCHTOWER_NOTIFICATION_URL: telegram://BOT_TOKEN@telegram/?channels=CHAT_ID
-      WATCHTOWER_SCHEDULE: 0 0 0 * * *
+      WATCHTOWER_SCHEDULE: 0 0 3 * * 6
       WATCHTOWER_CLEANUP: True

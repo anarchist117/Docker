@@ -7,7 +7,6 @@ services:
       POSTGRES_DB: "passbolt"
       POSTGRES_USER: "passbolt"
       POSTGRES_PASSWORD: "P4ssb0lt"
-      PGDATA: /var/lib/postgresql/18/docker
     volumes:
       - database_volume:/var/lib/postgresql
 

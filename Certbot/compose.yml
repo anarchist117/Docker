@@ -1,12 +1,9 @@
 services:
   certbot:
-    image: anarchist117/certbot
+    image: certbot/certbot
     container_name: certbot
-    restart: always
     ports:
-      - 80:80
+      - "0.0.0.0:80:80"
     volumes:
-      - ./letsencrypt/:/etc/letsencrypt
-    environment:
-      - Domain=vpn.domain.com
-      - Email=admin@vpn.domain.com
+      - /srv/certbot/letsencrypt:/etc/letsencrypt
+    command: certonly --standalone -d site.domain.com --agree-tos --quiet

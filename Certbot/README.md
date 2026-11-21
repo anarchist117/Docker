@@ -1,15 +1,15 @@
 # 1. Edit compose.yml
 ```
--d test.domain.com -m admin@domain.com
+-d site.domain.com
 ```
 
 # 2. Run Compose
 ```
-docker compose up -d
+docker compose run --rm certbot
 ```
 
 # Documentation
-https://eff-certbot.readthedocs.io/en/stable/install.html
+https://eff-certbot.readthedocs.io/en/latest/install.html#alternative-1-docker
 
 https://eff-certbot.readthedocs.io/en/stable/using.html
 

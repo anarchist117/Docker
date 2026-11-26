@@ -3,7 +3,7 @@ Create a file with your cloudflare credentials
 ```
 nano ./letsencrypt/cloudflare.ini
 ```
-regru.ini
+cloudflare.ini
 ```
 # Cloudflare API token used by Certbot
 dns_cloudflare_api_token = 0123456789abcdef0123456789abcdef01234567

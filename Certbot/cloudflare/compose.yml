@@ -1,0 +1,14 @@
+services:
+  certbot:
+    image: certbot/dns-cloudflare
+    container_name: certbot
+    volumes:
+      - ./letsencrypt:/etc/letsencrypt
+    command: >
+      certonly
+      --dns-cloudflare
+      --dns-cloudflare-credentials /etc/letsencrypt/cloudflare.ini
+      -d domain.com
+      -d *.domain.com
+      --non-interactive
+      --agree-tos

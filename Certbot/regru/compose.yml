@@ -1,0 +1,14 @@
+services:
+  certbot:
+    image: lionur/certbot-dns-regru
+    container_name: certbot
+    volumes:
+      - ./letsencrypt:/etc/letsencrypt
+    command: >
+      certonly
+      -a certbot-regru:dns
+      -d domain.com
+      -d *.domain.com
+      --email admin@domain.com
+      --non-interactive
+      --agree-tos

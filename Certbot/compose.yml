@@ -6,4 +6,9 @@ services:
       - "0.0.0.0:80:80"
     volumes:
       - ./letsencrypt:/etc/letsencrypt
-    command: certonly --standalone -d site.domain.com --agree-tos --quiet
+    command: >
+      certonly
+      --standalone
+      -d site.domain.com
+      --non-interactive
+      --agree-tos
